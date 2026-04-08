@@ -1,38 +1,49 @@
 # node-base-kit
 
-CLI that scaffolds a **Express.js + MongoDB** backend: structured `src/`, Mongoose config in `src/config`, error handling, `asyncHandler`, and starter user routes (register / login / JWT).
+## What is this?
 
-## Requirements
+**node-base-kit** is a small command-line tool (CLI) you run in the terminal. It **creates a new folder** with a ready-made **Node.js API** using **Express** and **MongoDB** (Mongoose), so you do not have to set up the same files every time.
 
-- Node.js **18+**
-- MongoDB (local or Atlas) for generated apps
+The generated project includes folders for routes, controllers, models, middleware, basic **sign up / log in** (with JWT), and a **MongoDB connection** helper.
 
-## Usage
+## How does it work?
+
+1. You run **`npx node-base-kit`** (after it is published on npm, or from a local clone with `npm link`).
+2. The tool **asks you for a project name** (for example `my-api`).
+3. It **creates a folder** with that name and **copies template files** into it (server, `src/` layout, `.env` examples, etc.).
+4. It runs **`npm install`** inside that folder so dependencies are installed.
+5. You open the folder, set **`.env`** (database URL and secret), start MongoDB, and run **`npm run dev`** to start the server.
+
+So: **one command → new project folder → install deps → you add your features.**
+
+## Quick start
 
 ```bash
 npx node-base-kit
 ```
 
-Enter a project name when prompted. The tool creates a folder, writes all files, and runs **`npm install`** for you.
-
 Then:
 
 ```bash
-cd your-project-name
+cd my-api
 cp .env.example .env
-# Edit .env: MONGO_URI, JWT_SECRET
+# Put your MONGO_URI and JWT_SECRET in .env
 npm run dev
 ```
 
-## npm init (optional)
+You need **Node.js 18+** and a **MongoDB** database (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)).
 
-If you publish **`create-node-base-kit`** to npm:
+## Optional: `npm init`
+
+If **`create-node-base-kit`** is on npm:
 
 ```bash
 npm init node-base-kit
 ```
 
-## Local development
+Same flow as above.
+
+## Develop this CLI locally
 
 ```bash
 git clone https://github.com/AJKakarot/node-base-kit.git
@@ -40,13 +51,6 @@ cd node-base-kit
 npm link
 npx node-base-kit
 ```
-
-## Publish to npm
-
-1. Enable **2FA** on [npmjs.com](https://www.npmjs.com) (required to publish).
-2. `npm login`
-3. From repo root: `npm publish`
-4. From `create-node-base-kit/`: `npm publish` (after `node-base-kit` is on the registry)
 
 ## License
 
