@@ -3,11 +3,20 @@
   "version": "1.0.0",
   "description": "npm init initializer for node-base-kit (Express + MongoDB scaffold)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJKakarot/node-base-kit.git"
+  },
+  "homepage": "https://github.com/AJKakarot/node-base-kit#readme",
+  "bugs": {
+    "url": "https://github.com/AJKakarot/node-base-kit/issues"
+  },
   "bin": {
     "create-node-base-kit": "cli.js"
   },
   "files": [
-    "cli.js"
+    "cli.js",
+    "README.md"
   ],
   "dependencies": {
     "node-base-kit": "^1.0.0"

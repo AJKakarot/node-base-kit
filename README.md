@@ -1,49 +1,70 @@
 # node-base-kit
 
-## What is this?
+Scaffold a new **Express.js** and **MongoDB** (Mongoose) API from the terminal: folder layout, env samples, error handling, `asyncHandler`, and starter user routes (register, login, JWT).
 
-**node-base-kit** is a small command-line tool (CLI) you run in the terminal. It **creates a new folder** with a ready-made **Node.js API** using **Express** and **MongoDB** (Mongoose), so you do not have to set up the same files every time.
+**Requirements:** Node.js 18 or newer. Generated apps need a MongoDB instance (local or hosted).
 
-The generated project includes folders for routes, controllers, models, middleware, basic **sign up / log in** (with JWT), and a **MongoDB connection** helper.
+## Installation
 
-## How does it work?
-
-1. You run **`npx node-base-kit`** (after it is published on npm, or from a local clone with `npm link`).
-2. The tool **asks you for a project name** (for example `my-api`).
-3. It **creates a folder** with that name and **copies template files** into it (server, `src/` layout, `.env` examples, etc.).
-4. It runs **`npm install`** inside that folder so dependencies are installed.
-5. You open the folder, set **`.env`** (database URL and secret), start MongoDB, and run **`npm run dev`** to start the server.
-
-So: **one command → new project folder → install deps → you add your features.**
-
-## Quick start
+You do not need to install this package globally. Use `npx`:
 
 ```bash
 npx node-base-kit
 ```
 
+To install as a dev dependency in an existing repo (unusual for a scaffold CLI):
+
+```bash
+npm install node-base-kit --save-dev
+```
+
+## Usage
+
+Run the CLI and enter a project name when prompted:
+
+```bash
+npx node-base-kit
+```
+
+It creates a directory with that name, writes the template files, and runs `npm install` inside it.
+
 Then:
 
 ```bash
-cd my-api
+cd your-project-name
 cp .env.example .env
-# Put your MONGO_URI and JWT_SECRET in .env
+```
+
+Edit `.env` and set at least `MONGO_URI` and `JWT_SECRET`. Start MongoDB, then:
+
+```bash
 npm run dev
 ```
 
-You need **Node.js 18+** and a **MongoDB** database (local or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)).
+The server listens on the port in `.env` (default 3000). Try `GET /health`.
 
-## Optional: `npm init`
+## What you get
 
-If **`create-node-base-kit`** is on npm:
+Rough layout of the generated project:
+
+- `server.js` – Express app, middleware, routes, listen
+- `src/config/db.js` – MongoDB connection
+- `src/routes`, `src/controllers`, `src/models` – example user module
+- `src/middlewares` – 404 and error handler
+- `src/utils/asyncHandler.js` – wrap async route handlers
+- `.env.example`, `.gitignore`, `package.json` with `dev` / `start` scripts
+
+## npm init
+
+If the package `create-node-base-kit` is published, you can run:
 
 ```bash
 npm init node-base-kit
 ```
 
-Same flow as above.
+Same behavior as `npx node-base-kit`.
 
-## Develop this CLI locally
+## CLI development (from source)
 
 ```bash
 git clone https://github.com/AJKakarot/node-base-kit.git
@@ -51,6 +72,10 @@ cd node-base-kit
 npm link
 npx node-base-kit
 ```
+
+## Repository
+
+Source and issues: [github.com/AJKakarot/node-base-kit](https://github.com/AJKakarot/node-base-kit)
 
 ## License
 

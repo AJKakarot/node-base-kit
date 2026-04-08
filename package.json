@@ -4,6 +4,14 @@
   "description": "CLI to scaffold a complete Express.js + MongoDB backend",
   "license": "MIT",
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJKakarot/node-base-kit.git"
+  },
+  "homepage": "https://github.com/AJKakarot/node-base-kit#readme",
+  "bugs": {
+    "url": "https://github.com/AJKakarot/node-base-kit/issues"
+  },
   "keywords": [
     "express",
     "scaffold",
@@ -16,7 +24,8 @@
   },
   "files": [
     "bin",
-    "templates"
+    "templates",
+    "README.md"
   ],
   "engines": {
     "node": ">=18"
