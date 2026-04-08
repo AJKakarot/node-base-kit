@@ -1,0 +1,39 @@
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const { connectDB } = require("./src/config/db");
+const userRoutes = require("./src/routes/user.routes");
+const { notFound, errorHandler } = require("./src/middlewares/error.middleware");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(express.json());
+app.use(morgan("dev"));
+
+app.get("/health", (_req, res) => {
+  res.json({ ok: true });
+});
+
+app.use("/api/users", userRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
+
+async function start() {
+  try {
+    await connectDB();
+    console.log("MongoDB connected");
+  } catch (err) {
+    console.error("MongoDB connection error:", err.message);
+    process.exit(1);
+  }
+
+  app.listen(PORT, () => {
+    console.log(`Server listening on http://localhost:${PORT}`);
+  });
+}
+
+start();
