@@ -1,7 +1,7 @@
 {
   "name": "node-base-kit",
   "version": "1.0.5",
-  "description": "CLI to scaffold a complete Express.js + MongoDB backend",
+  "description": "Run: npx node-base-kit — Scaffold Express + MongoDB APIs. (The npm page install box shows npm i; use npx to execute the CLI.)",
   "license": "MIT",
   "author": "",
   "repository": {

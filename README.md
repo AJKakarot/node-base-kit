@@ -4,18 +4,41 @@ Scaffold a new **Express.js** and **MongoDB** (Mongoose) API from the terminal: 
 
 **Requirements:** Node.js 18 or newer. Generated apps need a MongoDB instance (local or hosted).
 
-## Installation
-
-You do not need to install this package globally. Use `npx`:
+**Run this CLI (create a new project):**
 
 ```bash
 npx node-base-kit
 ```
 
-To install as a dev dependency in an existing repo (unusual for a scaffold CLI):
+**About the npm website:** The package page sidebar always shows `npm i node-base-kit`. npm does not allow authors to change that box. That command only **installs** the package into `node_modules`; it does **not** start the scaffold. Use **`npx node-base-kit`** above to run the generator (same as the sidebar would ideally say).
+
+## Installation
+
+**To create a new project, use `npx`.** That downloads the CLI (if needed) and **runs** it so it can ask for a name and generate the folder.
+
+```bash
+npx node-base-kit
+```
+
+**`npm install node-base-kit` does not create a project.** It only adds the package to `node_modules` (you might see “added 1 package”). Nothing runs until you start the CLI yourself. After installing, run:
+
+```bash
+npx node-base-kit
+```
+
+or, from the same folder:
+
+```bash
+node node_modules/node-base-kit/bin/cli.js
+```
+
+So: **`npm i` = install the tool only.** **`npx node-base-kit` = run the tool and scaffold a new app.**
+
+Optional dev dependency in an existing repo:
 
 ```bash
 npm install node-base-kit --save-dev
+npx node-base-kit
 ```
 
 ## Benefits (simple)
