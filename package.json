@@ -1,0 +1,24 @@
+{
+  "name": "node-base-kit",
+  "version": "1.0.0",
+  "description": "CLI to scaffold a complete Express.js + MongoDB backend",
+  "license": "MIT",
+  "author": "",
+  "keywords": [
+    "express",
+    "scaffold",
+    "cli",
+    "mongoose",
+    "backend"
+  ],
+  "bin": {
+    "node-base-kit": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
