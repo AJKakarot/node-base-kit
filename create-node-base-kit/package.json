@@ -1,6 +1,6 @@
 {
   "name": "create-node-base-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npm init initializer for node-base-kit (Express + MongoDB scaffold)",
   "license": "MIT",
   "repository": {
