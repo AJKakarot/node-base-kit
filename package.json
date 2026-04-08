@@ -1,6 +1,6 @@
 {
   "name": "node-base-kit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "CLI to scaffold a complete Express.js + MongoDB backend",
   "license": "MIT",
   "author": "",
